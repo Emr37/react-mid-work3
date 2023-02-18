@@ -1,18 +1,22 @@
 import './App.css';
-import Container from './components/Container';
+import * as React from 'react';
+import AppContainer from './components/AppContainer';
 
+import { ChakraProvider } from '@chakra-ui/react'
 import { ThemeProvider } from './context/ThemeContext';
 import { WeatherProvider } from './context/WeatherContext';
 
 function App() {
   return (
-    <>
+    <div className='App'>
       <ThemeProvider>
-        <WeatherProvider>
-          <Container/>
-        </WeatherProvider>
+        <ChakraProvider>
+            <WeatherProvider>
+              <AppContainer />
+            </WeatherProvider>
+        </ChakraProvider>
       </ThemeProvider>
-    </>
+    </div>
   );
 }
 

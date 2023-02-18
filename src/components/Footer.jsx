@@ -1,9 +1,10 @@
 import React from 'react'
 
 function Footer() {
+  console.log('Footer is rendering')
   return (
     <div>
-        This is Footer (Created by Emrah Aksoy)
+        by <a href='https://www.linkedin.com/in/emrah-aksoy/'>Emrah Aksoy</a>
     </div>
   )
 }

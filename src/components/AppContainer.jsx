@@ -3,23 +3,29 @@ import Footer from './Footer'
 import Header from './Header'
 import Search from './Search'
 import Weather from './Weather'
+import {Container, Spacer, Divider, Box} from '@chakra-ui/react'
 
-function Container() {
+function AppContainer() {
+  console.log('AppContainer is rendering')
+
     const {theme} = useTheme();
 
   return (
     <div className={`container ${theme}`}>
-
+      <Container>
         <Header/>
-          <hr/>
+          <Divider/>
+          <Spacer/>
         <Search/> 
+      </Container>
 
-        <Weather/>
-          <hr/>
+
+          <Weather/>
+          <Divider/>
         <Footer/>
 
     </div>
   )
 }
 
-export default Container;
+export default AppContainer;
