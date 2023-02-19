@@ -22,7 +22,7 @@ export const WeatherProvider = ({ children }) => {
 
     useEffect(() => {
         async function getData() {
-            const response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=tr&units=metric&APPID=4920da9967817e775947df726511bc41`)
+            const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=tr&units=metric&APPID=4920da9967817e775947df726511bc41`)
 
             const timeList = response.data.list;
 
