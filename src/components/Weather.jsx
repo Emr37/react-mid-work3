@@ -12,26 +12,33 @@ function Weather() {
   return (
 
     <div className="weather">
-      <Flex direction={'row'} justifyContent={'space-evenly'} m={10} >
+      <Flex 
+        align={'center'}
+        justify={{ base: "center", md: "space-around", xl: "space-between" }}
+        direction={{ base: "column", md: "row" }}
+       
+      m={10} 
+      >
 
         {
           newObj.map((e, index) => {
             return (
               <Card
                 key={index}
-                maxW='sm'
                 m={2}
+                align={'center'}
+
                 backgroundColor={theme === 'light' ? 'cyan.500' : 'cyan.100'}
                 color={theme === 'light' ? 'white' : 'black'}
-                width={'max-content'}
+                width={{base:'sm', md:'md'}}
 
               >
-                <CardHeader size='md'>
+                <CardHeader size='md'backgroundColor={index === 0 && 'blackAlpha.300'}>
                   <Heading size='md'>
                     {e.day}
                   </Heading>
                 </CardHeader>
-                <CardBody backgroundColor={index === 0 && 'blackAlpha.300'} >
+                <CardBody>
                   <Image
                     src={`http://openweathermap.org/img/wn/${e.icon}@2x.png`}
                     alt='weather-forecast-image'
