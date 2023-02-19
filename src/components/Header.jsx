@@ -1,21 +1,16 @@
 import {useTheme} from '../context/ThemeContext'
-import { Button, Spacer, Stack, Switch } from '@chakra-ui/react'
+import { Text, Stack, Switch } from '@chakra-ui/react'
 
 
 function Header() {
-  console.log('Header is rendering')
-
-
     const {theme, setTheme} = useTheme();
 
   return (
     <div>
-        This is Header ({theme})
-        <Spacer/>
-        <Stack 
+        <Text  textAlign={'right'}>{theme} mode</Text>
+        <Stack mb={2}
         direction='column'
-        align={'flex-end'}
-        
+        align={'flex-end'}        
         >
           <Switch
           aria-label='dark'

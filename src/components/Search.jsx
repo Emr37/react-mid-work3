@@ -3,16 +3,11 @@ import { Select } from '@chakra-ui/react'
 
 const Search = () => {
 
-    console.log('Search is rendering')
-
     const {cities, setCity} = useWeather();
     
-
-
-
     return (
         <>
-        <label htmlFor='cities'>Bir şehir seçiniz</label>
+        <label htmlFor='cities'>Please select a city</label>
         <Select 
         id='cities'
         defaultValue={'İstanbul'}
@@ -26,10 +21,7 @@ const Search = () => {
                 })
             }
         </Select>
-
-            
         </>
-
     );
 }
 
