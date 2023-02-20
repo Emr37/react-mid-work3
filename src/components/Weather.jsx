@@ -33,7 +33,7 @@ function Weather() {
                 width={{base:'sm', md:'md'}}
 
               >
-                <CardHeader size='md'backgroundColor={index === 0 && 'blackAlpha.300'}>
+                <CardHeader size='md'className={index === 0 && 'firstCardHeader'}>
                   <Heading size='md'>
                     {e.day}
                   </Heading>
@@ -48,8 +48,8 @@ function Weather() {
                 </CardBody>
                 <Text>{e.desc}</Text>
                 <Divider />
-                <CardFooter justifyContent={'center'} p={1}>
-                  <ButtonGroup spacing='5' justifyContent={'space-between'}>
+                <CardFooter p={1} className="cardFooter">
+                  <ButtonGroup className="cardFooter-button-group">
                     <Text>
                       {e.tempMax}
                     </Text>

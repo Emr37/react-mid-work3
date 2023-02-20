@@ -20,6 +20,8 @@ export const WeatherProvider = ({ children }) => {
     const [dayObj, setDayObj] = useState([])
     const [newObj, setNewObj] = useState(initialState)
 
+    console.log(dayObj);
+
     useEffect(() => {
         async function getData() {
             const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=tr&units=metric&APPID=4920da9967817e775947df726511bc41`)
@@ -90,6 +92,8 @@ export const WeatherProvider = ({ children }) => {
                 dayObj[i].day === e && newTemp.push(dayObj[i].temp_min) && newTemp.push(dayObj[i].temp_max);
             }
 
+            
+
             // sıralama fonksiyonu 
 
             function compareNumbers(a, b) {
@@ -113,7 +117,7 @@ export const WeatherProvider = ({ children }) => {
             for (let i = 0; i < dayObj.length - 1; i++) {
                 dayObj[i].day === e && icons.push(dayObj[i].icon) && descs.push(dayObj[i].desc);
             }
-            if (icons.length >= 5) {
+            if (icons.length === 8) {
                 icon = icons[4];
                 desc = descs[4];
             } else {
@@ -122,6 +126,7 @@ export const WeatherProvider = ({ children }) => {
 
             }
 
+            console.log(icon)
             return {
                 id: index,
                 day: e,
